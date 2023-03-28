@@ -26,6 +26,17 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Objective 
+
+- Create project with NestJS and Prisma
+
+## technologies used
+
+- NestJS
+- Prisma
+- SQLite
+- Javascript
+
 ## Installation
 
 ```bash
