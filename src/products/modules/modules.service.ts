@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { ProductDTO } from './product.dto';
-import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/database/PrismaService';
 
 @Injectable()
@@ -18,11 +17,9 @@ export class ProductsService {
       throw new Error('Product already exists');
     }
 
-    const product = await this.prisma.product.create({
+    return this.prisma.product.create({
       data,
     });
-
-    return product;
   }
 
   async findAll() {
@@ -40,7 +37,7 @@ export class ProductsService {
       throw new Error('Product not exist');
     }
 
-    return await this.prisma.product.update({
+    return this.prisma.product.update({
       data,
       where: {
         id,
@@ -65,6 +62,6 @@ export class ProductsService {
       },
     });
 
-    return true
+    return true;
   }
 }
